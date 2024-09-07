@@ -1,22 +1,20 @@
-# lendo o primeiro termo e a razão de uma PA, mostrando os 10 primeiros termos da progressão usando a estrutura while.
+#  Escreva um programa que leia um número N inteiro qualquer e mostre na tela os
+# N primeiros elementos de uma Sequência de Fibonacci. 
 
-termo = int(input("Termo: "))
-razao =  int(input("Razão: "))
+termos = int(input("Quantos termos você quer mostrar? "))
 
-n = 1
-quantidade_amostra = 10
+count = 0
 
-while n < quantidade_amostra:
-     
-    print('{} -> '.format(termo), end='')
+first = 0
+second = 1
 
-    termo += razao
+next = 3
 
-    n += 1
+while count <= termos:
 
-    if n == quantidade_amostra:
-        print('PAUSA')
-        quantidade_amostra += int(input('\nQuantos termos você quer mostrar a mais? '))
-    elif (quantidade_amostra == 0):
-        break
-print('Progressão finalizada com {} termos mostrados'.format(n))
+    next = first + second
+    print('{}'.format(first, second, next))
+    first = second
+    second = next
+
+    count += 1
